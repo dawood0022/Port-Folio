@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my Portfoilo</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+     
+
+
+
+      * {
+        padding: 0%;
+        margin: 0%;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+        
+      }
+      body {
+        width: 100%;
+         /* background: linear-gradient(to top, #30cfd0 0%, #330867 100%);  */
+        background-color: black;
+        height: 100%;
+        color: white;
+      }
+      nav {
+        /* background-color: rgb(14, 19, 23); */
+        /* position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100; */
+        height: 70px;
+        width: 100%;
+        color: white;
+        /* background: transparent; */
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-bottom: 2px solid #0ef;
+      }
+
+      #click{
+        display: none;
+      
+      }
+      nav .menu-btn{
+        display: none;
+        font-size: 30px;
+        cursor: pointer;
+
+      }
+      section{
+        border-bottom: 2px solid #0ef;
+        padding-bottom: 30px;
+      }
+       ul {
+        display: flex;
+      }
+     nav ul li {
+        list-style: none;
+        margin: 40px;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        cursor: default;
+      }
+      li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+      }
+      li a:hover,
+      li a.active {
+        color: #0ef;
+      }
+
+      p{
+        font-weight: 600;
+      }
+      #home {
+        height: 100vh;
+        display: flex;
+        justify-content: space-around;
+    
+      }
+      .leftsection {
+        width: 40%;
+      }
+      .text {
+        padding: 110px 0px 0px 90px;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      .text h1 span {
+        color: #0ef;
+      }
+
+      .rightsection {
+        width: 30%;
+        height: 80%;
+        padding-top: 40px;
+       
+      }
+      span {
+        color: #0ef;
+      }
+      .rightsection img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .social-media a {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-around;
+        background: transparent;
+        border-radius: 50%;
+        border: 2px solid #0ef;
+        color: #0ef;
+        text-decoration: none;
+        margin: 10px 8px 0 0;
+        transition: 0, 5s ease;
+      }
+
+      
+
+
+      .social-media a:hover {
+        background: #0ef;
+        color: #1f242d;
+        box-shadow: 0 0 20px #0ef;
+      }
+
+
+      /* About section */
+      #about{
+        height: 100vh;
+        
+        
+        
+
+      }
+      .about-container{
+        margin: 0 20px 0 20px;
+        
+      }
+
+      .about-main{
+        height: 85%;
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content:space-around;
+        grid-template-columns: 1fr 2fr ;
+        gap: 5rem;
+       
+        
+        
+      }
+      .img-section{
+        height: 20rem;
+        width: 20rem;
+        border-radius: 100%;
+        
+        background-color: blue;
+
+      }
+      .img-section img {
+        height: 100%;
+        width: 100%;
+        border-radius: 100%;
+        border: #0ef 2px solid;
+        cursor: pointer;
+      }
+     
+
+
+      #skills {
+        height: 100vh;
+       
+        
+      }
+      .heading {
+        margin-bottom: 5rem;
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 2rem;
+      }
+      .skill-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+        margin: 0 60px 0 60px; 
+        flex-wrap: wrap;
+      }
+      .skill-box {
+        background-color: #0ef;
+        height: 250px;
+        border-radius: 3rem;
+        border: 5px solid transparent;
+        cursor: pointer;
+        transition: 0, 4s ease-in-out;
+      }
+      .skill-box:hover {
+        background-color: white;
+        color: black;
+        border: 5px solid #0ef;
+        transform: scale(1.03);
+      }
+      .skill-box .skill-info {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        max-height: 200px;
+        justify-content: left;
+        align-items: baseline;
+        padding: 1rem 1rem;
+      }
+
+      .skill-info h4 {
+        font-size: 2rem;
+        font-weight: 800;
+        line-height: 2;
+      }
+
+
+      #contact{
+        height: 100vh;
+        width: 100vw;
+
+      }
+
+      /* contact */
+      #contact{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+      }
+      form{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        
+        height: 80%;
+        width: 80%;
+        gap: 2rem;
+       
+        
+      }
+      form .left{ 
+       
+        width: 40%;
+        margin-bottom: 40px;
+        
+        
+        
+        align-items: center;
+        justify-content:space-around;
+        flex-direction: column;  
+         
+        
+      }
+      .left input{
+        width: 100%;
+        height: 50px;
+        display:block; 
+        border-radius: 10px;
+        border: #0ef solid 2px;
+        color: white;
+        background-color: rgba(56, 56, 56, 0.385);
+      }
+      .right{
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .right textarea{
+        background-color: rgba(56, 56, 56, 0.385);
+        border: #0ef solid 2px;
+        border-radius: 1rem;
+        color: white;
+        width: 100%;
+       
+        
+      }
+      .right .btn{
+        margin-top: 20px;
+        padding: 5px;
+        border-radius: 0.8rem;
+        border: #0ef solid 2px;
+        font-weight: 500;
+        
+        
+      }
+      .btn:hover{
+        background-color: #0ef;
+        color: white;
+      }
+      /* footer */
+      footer{
+        height: 200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .footer-main {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+
+      }
+
+      .footer-main ul a{
+        text-decoration: none;
+        list-style: none;
+        margin:10px;
+        color: white;
+        
+        
+      }
+      /* animation */
+
+      @keyframes appear{
+        from{
+          opacity: 0;
+          scale: 0.5;
+        }
+        to{
+          opacity: 1;
+          scale: 1;
+        }
+      }
+      .block{
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+       
+      }
+
+     
+
+      @media (max-width: 920px) {
+
+        /* navebar */
+
+
+        .ulnav {
+          display: block;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          height: 100vh;
+          width: 100%;
+          background-color:black;
+          text-align: center;
+          top: -100%;
+          transition:0.4s ;
+          /* width:50%;  */
+         height: 370px;
+          /*  left: -100%;
+          transition: 0.4s; */
+        }
+        
+      
+      #click{
+        display: none;
+
+      }
+      nav .menu-btn{
+        display: block;
+        cursor: pointer
+      }
+     
+      #click:checked ~ ul{
+        top: 70px;
+      }
+
+
+        /* home */
+        #home {
+     
+          height: 100%;
+          flex-wrap: wrap;
+         
+        }
+        .leftsection {
+          width: 100%;
+
+        }
+
+        .text {
+          padding: 30px 30px 0 30px;
+        }
+
+        .rightsection {
+          width: 100%;
+          padding: 30px 30px 30px 30px;
+        }
+        
+
+        /* adout */
+        #about{
+          height: 100%;
+          width: 100%;
+          
+        }
+
+       .about-main{
+        height: 100%;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-content:center;
+        gap: 2rem;
+       }
+       .img-section{
+        height: 10rem;
+        width: 10rem;
+       }
+       
+
+
+          /* skills */
+          #skills{
+            height: 100%;
+          }
+          .skill-container{
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 0 20px 0 20px;
+          }
+          
+          
+
+          /* content */
+          #contact{
+            height: 100%;
+          }
+          
+
+          form{
+           flex-direction: column;
+           gap: 0px;
+
+          }
+        form .left{
+          width: 100%;
+          
+          }
+
+           /* footer */
+
+           .footer-main{
+          justify-content: center;
+        }
+        footer ul{
+            flex-wrap: wrap ;
+            justify-content: center;
+           }
+
+
+
+
+
+
+
+
+           
+      }
+
+ 
+    
+    </style>
+  </head>
+  <body>
+
+    <!-- navbaar code -->
+    <nav>
+      <input type="checkbox" id="click">
+      <div class="logo">Portfolio</div>
+      
+        <ul class="ulnav">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+     
+     
+      <label for="click" class="menu-btn" ><i class='bx bx-menu'></i></label>
+    </nav>
+
+    <!-- main and section start hear -->
+    <main>
+
+      <!-- section 1 start hear -->
+
+      <section class="home" id="home">
+        <div class="leftsection">
+          <div class="text">
+            <h3>Hello I'm</h3>
+            <h1><span>Dawood Shaikh</span></h1>
+            <h3>and I am a <span>Web Developer</span></h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor non
+            quos a consequatur aliquid quis possimus, ipsum porro ab accusantium
+            corporis aliquam laboriosam, eos cum exercitationem soluta, tempora
+            eaque nobis!</p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/verDeadpool3yWolverinePeliculaCompletaPelisplus/" target="_blank"><i class="bx bxl-facebook-circle"></i></a>
+              <a href="https://www.instagram.com/dawoodsk49/" target="_blank"><i class="bx bxl-instagram"></i></a>
+              <a href="https://wa.me/+919004569398" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+              <a href="https://t.me/+9004569398" target="_blank"><i class="bx bxl-telegram"></i></a>
+              <a href="https://www.linkedin.com/feed/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+              <a href="mailto:dawoodshaikh0022@gmail.com" target="_blank"><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="rightsection block"><img src="https://acetechlabs.com/wp-content/uploads/2024/06/2.png" alt="" /></div>
+      </section>
+
+<!-- about section start -->
+
+      <section id="about">
+        <div class="about-container ">
+            <h1 class="heading">About <span>Me</span></h1>
+            <div class="about-main">
+                <div class="img-section block">
+                  <!-- <img src="https://e1.pxfuel.com/desktop-wallpaper/327/823/desktop-wallpaper-hidden-man-face-hidden-face-boy.jpg" alt=""> -->
+                  <img src="https://i.ibb.co/FsgWb2Z/dp.gif" alt="">
+                </div>
+                   <div class="text-section block"><h3>Hello! I'm</h3> <h1><span>Dawood Shaikh</span></h1><p> a passionate web developer and designer with a love for creating intuitive and engaging digital experiences. My journey in web development began [X years ago], and since then, I've had the privilege of working on a variety of projects, ranging from simple landing pages to complex web applications.</p>
+                    </div>
+              </div>
+        </div>
+      
+      </section>
+
+
+      <!-- skill section start -->
+
+      <section id="skills">
+        <h1 class="heading">Skill<span>s</span></h1>
+        <div class="skill-container">
+          <div class="skill-box block">
+            <div class="skill-info ">
+              <h4>Front-End Desine</h4>
+              <p>
+                I’m a front-end developer with a strong focus on creating clean, efficient, and user-friendly interfaces. My expertise lies in transforming designs into responsive, interactive web experiences using HTML, CSS, and JavaScript.
+              </p>
+            </div>
+          </div>
+        
+          <div class="skill-box block">
+            <div class="skill-info">
+              <h4>Back-End Desine</h4>
+              <p>
+                As a dedicated back-end developer, I specialize in creating robust and scalable server-side solutions that power dynamic web applications. With a strong foundation in programming languages like Python, Java.
+              </p>
+            </div>
+          </div>
+        
+          <div class="skill-box block">
+            <div class="skill-info">
+              <h4>Full-Stack Developer</h4>
+              <p>
+                I’m a full-stack developer with skills in both front-end and back-end development. I create websites and web applications that look great and work smoothly. Using technologies like JavaScript, React, and Node.js.
+              </p>
+            </div>
+          </div>
+        
+          <div class="skill-box block">
+            <div class="skill-info">
+              <h4>PYTHON-Developer</h4>
+              <p>
+                I’m a Python developer who specializes in writing clean and efficient code. I use Python to build back-end systems, create web applications, and automate tasks. Whether it’s developing with frameworks like Django or Flask or crafting APIs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact section start -->
+
+      <section class="section5" id="contact">
+        <h1 class="heading">Contact <span>Me</span></h1>
+        <form class="input-box block">
+        <div class="left ">
+          <input type="text" placeholder="Full Name"><br>
+          <input type="email" placeholder="Email"><br>
+          <input type="number" placeholder="Phone Number"><br>
+          <input type="text" placeholder="Subject">
+        </div>
+        <div class="right">
+          <textarea name="" id="" cols="40" rows="10" placeholder="Your Message"></textarea>
+          <input class="btn" type="button" value="Send Message">
+        </div>
+      </form>
+    </div>
+      </section>
+     
+     <!--   <section id="section5">
+        <div class="leftsection"></div>
+        <div class="rightsection"></div>
+      </section> -->
+
+
+      <!-- footer  -->
+
+      <footer >
+        <div class="footer-main">
+          <div class="social-media">
+            <a href="https://www.facebook.com/verDeadpool3yWolverinePeliculaCompletaPelisplus/" target="_blank"><i class="bx bxl-facebook-circle"></i></a>
+            <a href="https://x.com/i/flow/login" target="_blank" target="_blank"><i class="bx bxl-twitter"></i></a>
+            <a href="https://www.instagram.com/dawoodsk49/" target="_blank"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank"><i class="bx bxl-linkedin"></i></a>
+            <a href="mailto:dawoodshaikh0022@gmail.com" target="_blank"><i class="bx bxl-gmail"></i></a>
+          </div>
+        <ul>
+          <a href="#"><li>FAQ</li></a>
+          <a href="#home"><li>Home</li></a>
+          <a href="#about"><li>About</li></a>
+          <a href="#education"><li>Education</li></a>
+          <a href="#skills"><li>Skills</li></a>
+          <a href="#contact"><li>Contact</li></a>
+        </ul>
+        <p>@ Dawood All Rights Reserved ©</p>
+      </div>
+      </footer>
+    </main>
+  </body>
+</html>
